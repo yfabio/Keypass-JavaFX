@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+
+
+<GridPane hgap="2.0" stylesheets="@../css/form.css" vgap="2.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.tech.developer.form.ControllerForm">
+   <columnConstraints>
+      <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="205.0" minWidth="10.0" prefWidth="96.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="316.0" minWidth="10.0" prefWidth="302.0" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints maxHeight="55.0" minHeight="10.0" prefHeight="52.0" vgrow="SOMETIMES" />
+      <RowConstraints vgrow="SOMETIMES" />
+      <RowConstraints vgrow="SOMETIMES" />
+      <RowConstraints vgrow="SOMETIMES" />
+      <RowConstraints vgrow="SOMETIMES" />
+      <RowConstraints vgrow="SOMETIMES" />
+      <RowConstraints vgrow="SOMETIMES" />
+      <RowConstraints vgrow="SOMETIMES" />
+      <RowConstraints vgrow="SOMETIMES" />
+   </rowConstraints>
+   <children>
+      <Label minWidth="380.0" prefHeight="56.0" prefWidth="380.0" styleClass="title" text="%label-confidencial" GridPane.columnSpan="2" />
+      <Label text="%label-title" GridPane.rowIndex="1" />
+      <Label text="%label-username" GridPane.rowIndex="2" />
+      <Label text="%label-password" GridPane.rowIndex="3" />
+      <Label text="%label-link" GridPane.rowIndex="4" />
+      <Label text="%label-notes" GridPane.rowIndex="5" />
+      <HBox alignment="CENTER_RIGHT" spacing="4.0" GridPane.columnIndex="1" GridPane.rowIndex="8">
+         <children>
+            <Button fx:id="mSaveButton" mnemonicParsing="false" onAction="#onSaveHandler" text="%button-save" />
+            <Button fx:id="mCancelButton" mnemonicParsing="false" onAction="#onCancelHandler" text="%button-cancel" />
+         </children>
+         <GridPane.margin>
+            <Insets right="4.0" />
+         </GridPane.margin>
+      </HBox>
+      <TextField fx:id="mTextTitle" promptText="%prompt-title" styleClass="customTextFiel" GridPane.columnIndex="1" GridPane.rowIndex="1">
+         <GridPane.margin>
+            <Insets right="4.0" />
+         </GridPane.margin>
+      </TextField>
+      <TextField fx:id="mTextUsername" promptText="%prompt-username" styleClass="customTextFiel" GridPane.columnIndex="1" GridPane.rowIndex="2">
+         <GridPane.margin>
+            <Insets right="4.0" />
+         </GridPane.margin>
+      </TextField>
+      <PasswordField fx:id="mTextPassword" promptText="%prompt-password" styleClass="customTextFiel" GridPane.columnIndex="1" GridPane.rowIndex="3">
+         <GridPane.margin>
+            <Insets right="4.0" />
+         </GridPane.margin>
+      </PasswordField>
+      <TextField fx:id="mTextLink" promptText="%prompt-link" styleClass="customTextFiel" GridPane.columnIndex="1" GridPane.rowIndex="4">
+         <GridPane.margin>
+            <Insets right="4.0" />
+         </GridPane.margin>
+      </TextField>
+      <TextArea fx:id="mTextNotes" prefHeight="200.0" prefWidth="200.0" promptText="%prompt-notes" styleClass="customTextFiel" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="5" GridPane.rowSpan="3">
+         <GridPane.margin>
+            <Insets right="4.0" />
+         </GridPane.margin>
+      </TextArea>
+   </children>
+</GridPane>

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<GridPane hgap="2.0" stylesheets="@../css/pref.css" vgap="2.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.tech.developer.preference.ControllerPreference">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="273.0" minWidth="10.0" prefWidth="81.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="290.0" minWidth="10.0" prefWidth="261.0" />
+      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="258.0" minWidth="10.0" prefWidth="103.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints fillHeight="false" maxHeight="59.0" minHeight="45.0" vgrow="SOMETIMES" />
+    <RowConstraints fillHeight="false" maxHeight="57.0" vgrow="SOMETIMES" />
+    <RowConstraints fillHeight="false" maxHeight="62.0" minHeight="23.0" vgrow="SOMETIMES" />
+      <RowConstraints fillHeight="false" maxHeight="73.0" vgrow="SOMETIMES" />
+      <RowConstraints fillHeight="false" maxHeight="67.0" vgrow="SOMETIMES" />
+      <RowConstraints fillHeight="false" maxHeight="80.0" vgrow="SOMETIMES" />
+      <RowConstraints fillHeight="false" vgrow="SOMETIMES" />
+      <RowConstraints fillHeight="false" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+		<Label prefHeight="62.0" prefWidth="400.0" styleClass="title" text="%label-preference" />
+		<Label text="%label-username" GridPane.rowIndex="1">
+         <GridPane.margin>
+            <Insets left="4.0" />
+         </GridPane.margin></Label>
+		<TextField fx:id="mUsername" promptText="%prompt-username" prefHeight="28.0" prefWidth="250.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+		<Label text="%label-password" GridPane.rowIndex="2">
+         <GridPane.margin>
+            <Insets left="4.0" />
+         </GridPane.margin></Label>
+		<PasswordField fx:id="mPassword" promptText="%prompt-password" prefHeight="28.0" prefWidth="250.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+		<Label text="%label-location" GridPane.rowIndex="3">
+         <GridPane.margin>
+            <Insets left="4.0" />
+         </GridPane.margin></Label>
+		<TextField fx:id="mLocation" promptText="%prompt-location" prefHeight="28.0" prefWidth="250.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+		<Label fx:id="mLabelSecret" text="%label-secret" GridPane.rowIndex="4">
+         <GridPane.margin>
+            <Insets left="4.0" />
+         </GridPane.margin></Label>
+		<Label fx:id="mLabelPassword" text="${mPassword.text}" visible="${mShowButton.selected}" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+		<Label text="%label-backup" GridPane.rowIndex="5">
+         <GridPane.margin>
+            <Insets left="4.0" />
+         </GridPane.margin></Label>
+		<CheckBox fx:id="mBackup" mnemonicParsing="false" text="%check-box-backup" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+		<Label text="%label-language" GridPane.rowIndex="6">
+         <GridPane.margin>
+            <Insets left="4.0" />
+         </GridPane.margin></Label>
+      <HBox alignment="CENTER_LEFT" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
+         <children>
+      
+                              		<RadioButton fx:id="mEnglish" mnemonicParsing="false" text="%radio-english">
+      			<graphic>
+      				<ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+      					<image>
+      						<Image url="@../images/canadian.png" />
+      					</image>
+      				</ImageView>
+      			</graphic>
+      		</RadioButton>
+      		<RadioButton fx:id="mPortuguese" mnemonicParsing="false" text="%radio-portguese">
+      			<graphic>
+      				<ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+      					<image>
+      						<Image url="@../images/brazilian.png" />
+      					</image>
+      				</ImageView>
+      			</graphic>
+      		</RadioButton>
+         </children>
+      </HBox>
+		<ToggleButton fx:id="mShowButton" mnemonicParsing="false" prefHeight="26.0" prefWidth="84.0" styleClass="button" text="%button-show" GridPane.columnIndex="2" GridPane.rowIndex="2">
+         <padding>
+            <Insets left="2.0" right="2.0" />
+         </padding>
+         <GridPane.margin>
+            <Insets left="2.0" right="2.0" />
+         </GridPane.margin></ToggleButton>
+		<Button mnemonicParsing="false" onAction="#onBrowserHandler" text="%button-browser" GridPane.columnIndex="2" GridPane.rowIndex="3">
+         <GridPane.margin>
+            <Insets left="2.0" right="2.0" />
+         </GridPane.margin></Button>
+		<Button fx:id="mCancelButton" mnemonicParsing="false" onAction="#onCancelHandler" text="%button-cancel" GridPane.columnIndex="2" GridPane.rowIndex="7">
+         <GridPane.margin>
+            <Insets left="2.0" right="2.0" />
+         </GridPane.margin></Button>
+
+                        		<Button fx:id="mSaveButton" mnemonicParsing="false" onAction="#onSaveHandler" text="%button-save" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="7">
+         <GridPane.margin>
+            <Insets left="2.0" right="2.0" />
+         </GridPane.margin></Button>
+   </children>
+</GridPane>

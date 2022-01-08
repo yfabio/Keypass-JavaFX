@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import org.kordamp.bootstrapfx.scene.layout.Panel?>
+
+<BorderPane stylesheets="@../css/login.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.tech.developer.account.ControllerAccount">
+   <center>
+      <Panel styleClass="panel-primary">
+      		<heading>
+				<Label styleClass="h3" text="%label-new-account" />
+			</heading>
+      		<body>
+      			<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="240.0" prefWidth="400.0">
+			         <children>
+			            <Label layoutX="22.0" layoutY="55.0" styleClass="customLabel" text="%label-username" />
+			            <Label layoutX="22.0" layoutY="95.0" styleClass="customLabel" text="%label-password" />
+			            <TextField fx:id="mUsername" layoutX="108.0" layoutY="50.0" promptText="%prompt-username" styleClass="customTextFiel" />
+			            <PasswordField fx:id="mPassword" layoutX="108.0" layoutY="90.0" promptText="%prompt-password" styleClass="customTextFiel" onAction="#onSaveHandler"/>
+			            <Button fx:id="mSaveButton" layoutX="131.0" layoutY="132.0" mnemonicParsing="false" onAction="#onSaveHandler" text="%button-save" />
+			            <Button fx:id="mCancelButton" layoutX="258.0" layoutY="132.0" mnemonicParsing="false" onAction="#onCancelHandler" text="%button-cancel" />
+			         </children>
+      			</AnchorPane>
+      		</body>
+      </Panel>
+   </center>  
+</BorderPane>
