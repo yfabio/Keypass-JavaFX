@@ -57,7 +57,7 @@ public class FileExport extends FileTaskBackup<Void> {
 						"'"+pin.getPassword()+"'",
 						"'"+today+"'",
 						"'"+pin.getNotes()+"'",
-						1);
+						person.getId());
 				
 				bw.write(sql);
 				bw.flush();

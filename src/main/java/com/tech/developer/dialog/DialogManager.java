@@ -271,6 +271,9 @@ public class DialogManager {
 
 		// Enable/Disable login button depending on whether a username was entered.
 		Node loginButton = dialog.getDialogPane().lookupButton(loginButtonType);
+		
+		
+		
 		loginButton.setDisable(true);
 
 		// Do some validation (using the Java 8 lambda syntax).
@@ -291,10 +294,18 @@ public class DialogManager {
 		    return null;
 		});
 
+		
+	
+		
 		Optional<Pair<String, String>> result = dialog.showAndWait();
 		
+		if(result.isEmpty()) {
+			return false;
+		}
+		
+	
 		List<Boolean> success = new ArrayList<Boolean>();
-
+		
 		result.ifPresent(usernamePassword -> {
 			
 			boolean p_user = usernamePassword.getKey().equalsIgnoreCase(person.getUsername());
